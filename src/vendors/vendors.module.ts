@@ -1,4 +1,8 @@
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Vendor, VendorSchema } from './schemas/vendor.schema';
 
-@Module({})
+@Module({
+    imports: [MongooseModule.forFeature([{ name: Vendor.name, schema: VendorSchema }])],
+})
 export class VendorsModule {}
